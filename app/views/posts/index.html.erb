@@ -6,7 +6,7 @@
 
 <% @posts.each do |post| %>
   <main>
-    <h2><%= post.title %></h2>
+    <h2><%= link_to post.title, post_path(post) %></h2>
 
     <p>Posted by: <%= link_to post.user.name, user_path(post.user) %>, <%= time_ago_in_words post.created_at %> ago</p>
     <p><%= post.body %></p>

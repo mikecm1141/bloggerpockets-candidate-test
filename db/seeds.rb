@@ -12,3 +12,9 @@
                  published: true)
   end
 end
+
+Post.all.each do |post|
+  2.times do
+    post.comments.create body: Faker::Lorem.sentence, user: User.all.sample
+  end
+end
