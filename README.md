@@ -10,6 +10,6 @@ It is not essential to run the app in order to find the issues, but it may help 
 
 ````
 $ bundle
-$ bin/rails db:create db:seed
+$ bin/rails db:create db:migrate db:seed
 $ bin/rails s
 ````
