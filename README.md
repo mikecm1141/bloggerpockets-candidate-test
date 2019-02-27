@@ -1,24 +1,15 @@
-# README
+# Purpose
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository contains a very basic Rails 5 app.
 
-Things you may want to cover:
+The code contains many problems: please **identify** these problems and propose **fixes**.
 
-* Ruby version
+# Startup
 
-* System dependencies
+It is not essential to run the app in order to find the issues, but it may help you to do so and that's totally fine. The standard Rails startup procedure should be enough:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+````
+$ bundle
+$ bin/rails db:create db:seed
+$ bin/rails s
+````
