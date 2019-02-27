@@ -15,6 +15,6 @@ end
 
 Post.all.each do |post|
   2.times do
-    post.comments.create body: Faker::Lorem.sentence, user: User.all.sample
+    post.comments.create body: Faker::Lorem.sentence, user: User.all.sample, published: true
   end
 end

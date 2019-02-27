@@ -6,6 +6,7 @@ class CreateComments < ActiveRecord::Migration[5.2]
       t.references :post
       t.string :body
       t.references :user
+      t.boolean :published, default: false, null: false
       t.timestamps
     end
   end
