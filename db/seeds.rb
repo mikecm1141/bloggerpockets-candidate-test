@@ -1,4 +1,14 @@
 # frozen_string_literal: true
 
-User.create(name: "Alice Test", email: "alice@biggerpockets.com", password: "password")
-User.create(name: "Bob Test", email: "bob@biggerpockets.com", password: "hunter2")
+100.times do
+  user = User.create!(name: Faker::Name.name,
+                      email: Faker::Internet.email,
+                      password: Faker::Internet.password(8))
+
+  3.times do
+    Post.create!(title: Faker::Lorem.sentence.gsub(/\./, ""),
+                 body: Faker::Lorem.paragraph,
+                 user: user,
+                 published: true)
+  end
+end

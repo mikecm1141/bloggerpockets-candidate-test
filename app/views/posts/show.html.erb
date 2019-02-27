@@ -1,0 +1,3 @@
+<h1><%= @post.title %></h1>
+<p>Posted by: <%= link_to @post.user.name, user_path(@post.user) %></p>
+<p><%= @post.body %></p>
