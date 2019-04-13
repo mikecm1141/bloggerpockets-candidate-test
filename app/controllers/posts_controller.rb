@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :gather_posts, only: :index
+  before_action :gather_posts, :sort_posts, only: :index
   def index
     respond_to do |format|
       format.html
@@ -21,7 +21,9 @@ class PostsController < ApplicationController
     ## taking the number of queries for this action to just 2 instead of
     ## the hundreds it was before.
     @posts = Post.published.includes(:user)
+  end
 
+  def sort_posts
     if params[:sort].present?
       ## Since it is a big security risk here interpolating input from
       ## our incoming params, I will refactor this to have more direct control
