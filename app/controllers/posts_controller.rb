@@ -10,7 +10,14 @@ class PostsController < ApplicationController
     @posts = Post.published.includes(:user)
 
     if params[:sort].present?
-      @posts = @posts.order("created_at #{params[:sort]}")
+      ## Since it is a big security risk here interpolating input from
+      ## our incoming params, I will refactor this to have more direct control
+      ## of what method we are using for our AR call.
+      if params[:sort] == 'asc'
+        @posts = @posts.order(created_at: :asc)
+      elsif params[:sort] == 'desc'
+        @posts = @posts.order(created_at: :desc)
+      end
     end
 
     respond_to do |format|
