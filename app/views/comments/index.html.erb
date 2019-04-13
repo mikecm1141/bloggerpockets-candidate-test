@@ -2,8 +2,9 @@
 
 <ol>
 <% @post.comments.each do |comment| %>
-<li>
-<%= comment.body %><br />- <%= link_to comment.user.name %>
-</li>
+  <li>
+    <%= comment.body %><br />
+    - <%= link_to comment.user.name, user_path(comment.user)%>
+  </li>
 <% end %>
 </ul>
