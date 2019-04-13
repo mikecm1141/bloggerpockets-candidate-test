@@ -2,4 +2,4 @@
 <p>Posted by: <%= link_to @post.user.name, user_path(@post.user) %></p>
 <p><%= @post.body %></p>
 
-<%= link_to "View comments", comments_post_path(@post) %>
+<%= link_to "View comments", post_comments_path(@post) %>
