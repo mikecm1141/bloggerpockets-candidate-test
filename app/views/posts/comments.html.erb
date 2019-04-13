@@ -1,9 +1,0 @@
-<h1>Comments on <%= link_to @post.title, post_path(@post) %></h1>
-
-<ol>
-<% @comments.each do |comment| %>
-<li>
-<%= comment.body %><br />- <%= link_to comment.user.name %>
-</li>
-<% end %>
-</ul>
