@@ -2,7 +2,8 @@
 
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(published: true)
+    ## We have a scope defined in the Post model, so we will use that here.
+    @posts = Post.published
 
     if params[:sort].present?
       @posts = @posts.order("created_at #{params[:sort]}")
