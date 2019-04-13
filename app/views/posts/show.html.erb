@@ -1,5 +1,5 @@
 <h1><%= @post.title %></h1>
-<p>Posted by: <%= link_to @post.user.name, user_path(@post.user) %></p>
+<p>Posted by: <%= link_to @post.user_name, user_path(@post.user) %></p>
 <p><%= @post.body %></p>
 
 <%= link_to "View comments", post_comments_path(@post) %>
